@@ -9,7 +9,7 @@ import {
 
 import { validateSchema } from "../middlewares/validator.middleware.js";
 import { productSchema } from "../schemas/product.schema.js";
-import { protect } from "../middlewares/aut.middleware.js";
+import { protect } from "../middlewares/auth.middleware.js";
 
 const productRouter = Router();
 
