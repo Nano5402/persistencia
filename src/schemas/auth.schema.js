@@ -16,8 +16,8 @@ export const registerSchema = z.object({
     .min(6, "La contraseña debe tener al menos 6 caracteres"),
 
   role: z
-    .enum(['admin', 'user', 'worker'], {
-      invalid_type_error: "El rol solo puede ser 'admin', 'user' o 'worker'",
+    .enum(['user', 'admin', 'worker'], {
+      invalid_type_error: "El rol solo puede ser 'user', 'admin' o 'worker'",
     })
     .optional(), 
 }).strict("No envíes campos adicionales");
@@ -25,7 +25,7 @@ export const registerSchema = z.object({
 export const loginSchema = z.object({
   username: z.string({ required_error: "El usuario es obligatorio" }),
   password: z.string({ required_error: "La contraseña es obligatoria" })
-}).strict();
+}).strict()("Campos no permitidos en el login");
 
 export const refreshTokenSchema = z.object({
   refreshToken: z.string({ 

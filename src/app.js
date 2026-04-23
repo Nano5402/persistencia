@@ -1,7 +1,7 @@
 import express from "express";
 import productRouter from "./routes/product.routes.js";
 import categoryRouter from "./routes/category.routes.js";
-import "./config/db.js";
+// import "./config/db.js";
 import authRouter from "./routes/auth.routes.js";
 
 // 1. Importamos nuestro manejador global
